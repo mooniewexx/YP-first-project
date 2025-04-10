@@ -10,16 +10,443 @@
 }
 
 .header {
+  display: flex;
+  position: relative;
+  align-items: center;
   height: 100vh;
   min-height: 600px;
   max-height: 756px;
   /* выше установили ограничения для секции */
+  background-color: #f2f2f2;
+  /*overflow: hidden;*/
+}
+
+/* Блок logo с модификатором */
+.logo {
+  width: 228px;
+  height: 32px;
+  background-image: url(./images/logo_place_header.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 30px;
+  left: 64px;
+  z-index: 3;
+}
+
+.logo_place_header {
+  position: absolute;
+  top: 30px;
+  left: 64px;
+}
+
+/* Основной заголовок */
+.header__title {
+  display: flex;
+  /*align-content: center;
+  align-items: center;
+  justify-content: center;*/
+  width: 730px;
+  margin-left:64px;
+  position: absolute;
+  /*top: 50%;
+  transform: translateY(-50%);*/
+  line-height: 96px;
+  font-size: 102px;
+  font-weight: 600;
+  z-index: 3;
+}
+
+/* Подзаголовок */
+.header__subtitle {
+  position: absolute;
+  width: 388px;
+  margin: 0;
+  left: 64px;
+  bottom: 30px;
+  line-height: 25px;
+  font-size: 18px;
+  font-weight: normal;
+  z-index: 3;
+}
+
+/* Ссылка */
+.header__link {
+  position: absolute;
+  left: 64px;
+  bottom: 30px;
+  margin-left: 388px;
+  line-height: 25px;
+  font-size: 18px;
+  font-weight: normal;
+  color: #2f80ed;
+  text-decoration: none;
+  z-index: 3;
+}
+
+.header__link:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+/* Главное изображение */
+.header__main-illustration {
+  position: absolute;
+  width: 765px;
+  height: 608px;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-image: url(./images/two_again.png);
+  background-size: cover;
 }
 
 /* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
+/* Синий квадрат */
 .header__square-pic {
   height: 568px;
   width: 568px;
+  background-color: #2f80ed;
+  position: absolute;
+  top: 64px;
+  right: 0;
+  z-index: 0;
+  animation: rotation 20s linear infinite;
+}
+
+/* Анимация для square-pic */
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Стили для секции description */
+.description {
+  width: 80%;
+  min-width: 784px;
+  margin: 0 auto; /* Центрирование блока */
+  padding: 100px 0; /* Отступы сверху и снизу */
+}
+
+.two_columns {
+  display: flex;
+  justify-content: space-between; /* Распределение элементов вдоль оси */
+  align-items: flex-start; /* Выравнивание по верхнему краю */
+  gap: 40px; /* Расстояние между колонками */
+}
+
+.two_columns__brief {
+  width: 175px;
+  font-size: 18px;
+  line-height: 1.2; /* 12px / 18px ≈ 1.2 (или можно указать 12px) */
+  font-weight: normal;
+  color: #2f80ed;
+  margin: 0;
+}
+
+.two_columns__main-text {
+  flex: 1; /* Занимает оставшееся пространство */
+  max-width: 80%; /* Ширина 80% от родителя */
+}
+
+.two_columns__paragraph {
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: normal;
+  margin: 0 0 30px 0;
+}
+
+.two_columns__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.two_columns__span-accent {
+  font-weight: 600; /* Жирное начертание */
+}
+
+/* Стили для секции digits */
+.digits {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.section-title {
+  width: 60%;
+  margin: 0 auto 20px;
+  font-size: 60px;
+  line-height: 115px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section-subtitle {
+  width: 60%;
+  margin: 0 auto 60px;
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 60px;
+  column-gap: 20px;
+}
+
+.table__cell {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.table__heading {
+  margin: 0 0 20px;
+  font-size: 24px;
+  line-height: 115px;
+  font-weight: 600;
+}
+
+.table__text {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+/* Стили для секции feynman */
+.feynman {
+  position: relative; /* Для абсолютного позиционирования элементов внутри */
+  height: 890px;
+  background-color: #f2f2f2; /* Светлый фон как в Практикуме */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px; /* Отступ сверху */
+  box-sizing: border-box;
+}
+
+.feynman__title {
+  width: 648px;
+  margin: 0 0 70px;
+  font-size: 120px;
+  line-height: 1.15;
+  font-weight: 600;
+  text-align: center;
+  z-index: 1; /* Чтобы текст был поверх изображения */
+}
+
+.feynman__subtitle {
+  margin: 0;
+  top: 70px;
+  font-size: 36px;
+  line-height: 51px;
+  font-weight: normal;
+  z-index: 1;
+}
+
+.feynman__link {
+  position: absolute;
+  top: 50%; /* Позиционирование на половине высоты секции */
+  right: 48px;
+  font-size: 36px;
+  line-height: 51px;
+  font-weight: normal;
+  color: #2f80ed; /* Синий цвет ссылки как в Практикуме */
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.feynman__link:hover {
+  opacity: 0.7;
+}
+
+.feynman__pic {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 867px;
+  height: 637px;
+  object-fit: cover;
+  object-position: left bottom;
+  z-index: 0;
+}
+
+/* Стили для секции kaufman */
+.kaufman {
+  position: relative; /* Для абсолютного позиционирования треугольника */
+  padding: 90px 0;
+  background-color: #1f1f1f; /* Темный фон */
+  color: white;
+  overflow: hidden; /* Чтобы треугольник не выходил за границы */
+}
+
+.section-title_theme_dark {
+  width: 60%;
+  margin: 0 auto 20px;
+  font-size: 60px;
+  line-height: 1.15;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  z-index: 1; /* Чтобы текст был поверх треугольника */
+}
+
+.section-subtitle_theme_dark {
+  width: 60%;
+  margin: 0 auto 50px;
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: normal;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.table_theme_dark {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 80px;
+  column-gap: 20px;
+  z-index: 1;
+}
+
+.table__cell_theme_dark {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.table__heading_theme_dark {
+  margin: 0 0 20px;
+  font-size: 24px;
+  line-height: 1.15;
+  font-weight: 600;
+  color: white;
+  z-index: 1;
+}
+
+.table__text_theme_dark {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: normal;
+  color: white;
+  z-index: 1;
+}
+
+.kaufman__triangle {
+  position: absolute;
+  top: 0;
+  right: -210px; /* Смещение за правую границу */
+  width: 877px;
+  height: 877px;
+  z-index: 0; /* Под текстом и таблицей */
+  animation: rotation 20s linear infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Стили для подвала */
+.footer {
+  min-height: 360px;
+  background-color: #1f1f1f;
+  color: white;
+  padding: 60px 0 40px;
+  box-sizing: border-box;
+}
+
+.footer__columns {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__column_content_copyright {
+  flex-basis: 711px;
+  justify-content: space-between;
+}
+
+.logo_place_footer {
+  width: 183px;
+  height: 35px;
+}
+
+.footer__author {
+  margin: 0;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: normal;
+}
+
+.footer__column-heading {
+  margin: 0 0 20px;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+.footer__column-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__column-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.footer__column-link:hover {
+  opacity: 0.7;
+}
+
+.footer__social-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+/* Дополнительные стили для footer (чтобы использовать logo повторно) */
+.logo_place_footer {
+  position: static;
+  width: 183px;
+  height: 35px;
+  background-image: url(./images/logo_place_footer.svg);
 }
 
 /* и элемента с модификатором вида ключ-значение */
