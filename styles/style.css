@@ -40,6 +40,20 @@
   left: 64px;
 }
 
+/* Стиль для подписи после лого */
+.header__username {
+  margin: 75px 0 0 64px;
+  font-size: 32px;
+  color: #000;
+  font-style: italic;
+  align-self: flex-start;
+}
+
+.header__span-accent {
+  font-weight: bold;
+  color: #2f80ed;
+}
+
 /* Основной заголовок */
 .header__title {
   display: flex;
@@ -68,14 +82,15 @@
   font-size: 18px;
   font-weight: normal;
   z-index: 3;
+  
 }
 
 /* Ссылка */
 .header__link {
-  position: absolute;
+  display: inline;
   left: 64px;
   bottom: 30px;
-  margin-left: 388px;
+  margin-left: 5px;
   line-height: 25px;
   font-size: 18px;
   font-weight: normal;
@@ -227,7 +242,7 @@
 .feynman {
   position: relative; /* Для абсолютного позиционирования элементов внутри */
   height: 890px;
-  background-color: #f2f2f2; /* Светлый фон как в Практикуме */
+  background-color: #f2f2f2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -261,7 +276,7 @@
   font-size: 36px;
   line-height: 51px;
   font-weight: normal;
-  color: #2f80ed; /* Синий цвет ссылки как в Практикуме */
+  color: #2f80ed;
   text-decoration: none;
   transition: opacity 0.3s ease;
   z-index: 1;
@@ -286,7 +301,7 @@
 .kaufman {
   position: relative; /* Для абсолютного позиционирования треугольника */
   padding: 90px 0;
-  background-color: #1f1f1f; /* Темный фон */
+  background-color: #1f1f1f;
   color: white;
   overflow: hidden; /* Чтобы треугольник не выходил за границы */
 }
